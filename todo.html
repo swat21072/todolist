@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<head>
+    <title>Todolist</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    <link rel="stylesheet" href="todo.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+</head>
+<body>
+
+<div class="header">
+    <h1>Todolist</h1>
+</div>
+
+<div class="row">
+
+    <div class="column side">
+    <h1>Список</h1>
+    <ul>
+      
+    </ul>
+    </div>
+
+    <div class="column middle">
+        <h1>Заметки</h1>
+        <!-- <div id="output"></div> -->
+        <ul id="output">       
+          </ul>
+          
+        <Div class="container">
+            <button type="button" class="btn btn-primary" id="myBtn" onclick="addlist()">Add list</button>
+            </Div>
+        
+<div id="myModal" class="modal">
+
+    <!-- Модальное содержание -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <span class="close">&times;</span>
+        <h2>Модальный заголовок</h2>
+      </div>
+      <div class="modal-body">
+        <p>Заголовок</p>
+
+          <input type="text" id="heading" size="60" raw="30">
+<br>
+        <p>Заметка</p>
+          <textarea name="comment" cols="100" rows="5" id="note"></textarea>
+          <br>
+          
+
+      </div>
+      <div class="modal-footer">
+        <h3>Модальный подвал</h3>
+        <input type="reset" value="Сохранить" class="save"></p>
+      </div>
+    </div>
+  
+  </div>
+
+        
+    </div>
+
+    <!-- <div class="column side">
+        <h1>right side</h1>
+    </div> -->
+</div>
+
+<script src="todo.js"></script>
+
+
+
+11
+</body>
