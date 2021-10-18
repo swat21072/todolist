@@ -30,14 +30,30 @@ window.onclick = function(event) {
   }
 }
 
-const keep = [];
-let i = 0;
-
-const keep2 =[];
-
 
 var save = document.getElementsByClassName("save")[0];  // кнопка сохранения
 save.onclick = function() {
+
+  writenote();
+
+  modal.style.display = "none";
+  
+}
+
+
+
+delet.onclick = function(){
+  
+  var note =  document.getElementById('output');
+  note.appendChild.remove();
+
+}
+
+function writenote(){   
+
+  const keep = [];
+  let i = 0;
+  const keep2 =[];
 
   keep2.push(document.getElementById("heading").value);  // запись заголовка
   var list = document.getElementById('output')
@@ -53,13 +69,6 @@ save.onclick = function() {
  
   i++;
 
-  modal.style.display = "none";
-  
 }
 
 
-
-
-
-  // document.getElementById("output").innerHTML = document.getElementById("vvod").value; // сохранения введенной заметки
-  // document.getElementById("output").innerHTML = keep[i];
