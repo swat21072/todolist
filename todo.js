@@ -45,7 +45,9 @@ save.onclick = function() {
 delet.onclick = function(){
   
   var note =  document.getElementById('output');
-  note.appendChild.remove();
+  
+  
+  note.parentNode.removeChild(output);
 
 }
 
@@ -57,13 +59,19 @@ function writenote(){
 
   keep2.push(document.getElementById("heading").value);  // запись заголовка
   var list = document.getElementById('output')
-  var li = document.createElement('H2')
-  li.innerHTML = keep2[i]
-  list.appendChild(li)
+  var note = document.createElement('note');
+  note.setAttribute("class","note");
+  var h2 = document.createElement('H2')
+  h2.innerHTML = keep2[i]
+  list.appendChild(note)
+  note.appendChild(h2);
+  note.style.property =   
+
+
 
   keep.push(document.getElementById("note").value);  // запись заметки
-  var list = document.getElementById('output')
   var li = document.createElement('LI')
+  li.setAttribute("class","notee")
   li.innerHTML = keep[i]
   list.appendChild(li)
  
