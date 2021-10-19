@@ -66,6 +66,7 @@ function writenote(){
   note.setAttribute("class","note");
   note.setAttribute("id","N");
   var h2 = document.createElement('H2')
+  h2.setAttribute('id','h2')
   h2.innerHTML = keep2[i]
   list.appendChild(note)
   note.appendChild(h2);
@@ -74,6 +75,7 @@ function writenote(){
   keep.push(document.getElementById("note").value);  // запись заметки
   var li = document.createElement('LI')
   li.setAttribute("class","notee")
+  li.setAttribute('id','li')
   li.innerHTML = keep[i]
   note.appendChild(li)
 
@@ -81,9 +83,15 @@ function writenote(){
   button.setAttribute("class","delet");
   button.setAttribute('onclick','delet(N)');
   button.setAttribute("type","button");
-  button.innerHTML = 12121;
+  button.innerHTML = "удалить";
   note.appendChild(button);
 
+  var edit = document.createElement('button');
+  edit.setAttribute("class","delet");
+  edit.setAttribute('onclick','edit(N)');
+  edit.setAttribute("type","button");
+  edit.innerHTML = 'редактировать';
+  note.appendChild(edit);
 
 
   N++;
@@ -92,3 +100,29 @@ function writenote(){
 }
 
 
+function edit(N){
+
+  var note = document.getElementById('N')
+  
+  var h2 = note.childNodes[0].firstChild;
+  var li = note.childNodes[1].firstChild;
+ 
+  var input = document.createElement('input');
+  input.setAttribute('type','text');
+  input.setAttribute('class','edit');
+  input.setAttribute('size','60');
+  input.setAttribute('raw','30');
+  
+  note.childNodes[1].appendChild(input);
+  
+
+
+
+
+
+
+
+  // h2.textContent= 'kek';
+
+
+}
