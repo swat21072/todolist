@@ -42,39 +42,51 @@ save.onclick = function() {
 
 
 
-delet.onclick = function(){
+function delet(N) {
   
-  var note =  document.getElementById('output');
+  var note =  document.getElementById('N');
   
   
-  note.parentNode.removeChild(output);
+  note.parentNode.removeChild(note);
 
 }
+
+let N = 0;
 
 function writenote(){   
 
   const keep = [];
   let i = 0;
   const keep2 =[];
+  
 
   keep2.push(document.getElementById("heading").value);  // запись заголовка
   var list = document.getElementById('output')
   var note = document.createElement('note');
   note.setAttribute("class","note");
+  note.setAttribute("id","N");
   var h2 = document.createElement('H2')
   h2.innerHTML = keep2[i]
   list.appendChild(note)
   note.appendChild(h2);
-  note.style.property =   
-
-
-
+   
+  
   keep.push(document.getElementById("note").value);  // запись заметки
   var li = document.createElement('LI')
   li.setAttribute("class","notee")
   li.innerHTML = keep[i]
-  list.appendChild(li)
- 
+  note.appendChild(li)
+
+  var button = document.createElement('button');
+  button.setAttribute("class","delet");
+  button.setAttribute('onclick','delet(N)');
+  button.setAttribute("type","button");
+  button.innerHTML = 12121;
+  note.appendChild(button);
+
+
+
+  N++;
   i++;
 
 }
