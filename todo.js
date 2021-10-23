@@ -99,12 +99,11 @@ function writenote(){
 }
 
 
+
 function edit(val){
 
   var kk = parseInt(val.match(/\d+/));
   var note = document.getElementById(kk);
-  
-  
   var h2 = note.childNodes[0].firstChild;
   var li = note.childNodes[1].firstChild;
 
@@ -114,24 +113,56 @@ function edit(val){
   input.value=h2.nodeValue;
   note.appendChild(input);
 
-  // var br = document.createElement('br')
-  // br.innerHTML = "<br>";
-  // note.appendChild(br);
-
   var text=document.createElement('textarea');
   text.setAttribute('class','editli');
   text.setAttribute('id','liedit');
   text.value=li.nodeValue;
   note.appendChild(text);
 
-
   var save = document.createElement('button');
-  save.setAttribute("class","delet");
-  save.setAttribute('onclick','saveedit(input,text)');
+  save.setAttribute("class","ppdel");
+  save.setAttribute('onclick','saveedit(this.id)');
   save.setAttribute("type","button");
+  save.setAttribute('id',kk);
   save.innerHTML = 'сохранить';
   note.appendChild(save);
   
-
+ 
   
+}
+
+  function saveedit(kk) {
+
+    let Hvar;
+    let Lvar;
+    const keep3=[];
+    const keep4=[];
+    let i = 0;
+    keep3.push(document.getElementById("hedit").value);
+    keep4.push(document.getElementById("liedit").value);
+    Hvar = keep3[i];
+    Lvar = keep4[i];    
+    i++;
+    
+  
+    var note = document.getElementById(kk);
+    var h2 = note.childNodes[0].firstChild;
+    var li = note.childNodes[1].firstChild;
+    var pp = note.childNodes[6].firstChild;
+
+    h2.nodeValue = Hvar;
+    li.nodeValue = Lvar;
+
+    var hedit = document.getElementById('hedit');
+    var liedit = document.getElementById('liedit');
+  
+    
+   
+    pp.remove();
+     hedit.remove();
+    liedit.remove();
+
+    
+
+
 }
