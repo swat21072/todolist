@@ -58,6 +58,7 @@ function writenote(){
   let i = 0;
   const keep2 =[];
   let but = 'but'+N;
+  let but1 = 'butt'+N;
 
   keep2.push(document.getElementById("heading").value);  // запись заголовка
   var list = document.getElementById('output')
@@ -89,7 +90,7 @@ function writenote(){
   edit.setAttribute("class","delet");
   edit.setAttribute('onclick','edit(this.id)');
   edit.setAttribute("type","button");
-  edit.setAttribute("id",but);
+  edit.setAttribute("id",but1);
   edit.innerHTML = 'редактировать';
   note.appendChild(edit);
 
@@ -101,7 +102,7 @@ function writenote(){
 
 
 function edit(val){
-
+  document.getElementById(val).disabled = true;
   var kk = parseInt(val.match(/\d+/));
   var note = document.getElementById(kk);
   var h2 = note.childNodes[0].firstChild;
@@ -123,16 +124,17 @@ function edit(val){
   save.setAttribute("class","ppdel");
   save.setAttribute('onclick','saveedit(this.id)');
   save.setAttribute("type","button");
-  save.setAttribute('id',kk);
+  save.setAttribute('id',val);
   save.innerHTML = 'сохранить';
   note.appendChild(save);
+  
   
  
   
 }
 
-  function saveedit(kk) {
-
+  function saveedit(val) {
+    var kk = parseInt(val.match(/\d+/));
     let Hvar;
     let Lvar;
     const keep3=[];
@@ -159,8 +161,10 @@ function edit(val){
     
    
     pp.remove();
+    
      hedit.remove();
     liedit.remove();
+    document.getElementById(val).disabled = false;
 
     
 
