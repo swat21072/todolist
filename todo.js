@@ -78,7 +78,7 @@ function writenote(){
   li.innerHTML = keep[i]
   note.appendChild(li)
 
-  var button = document.createElement('button');
+  var button = document.createElement('button'); // кнопка удалить заметку
   button.setAttribute("class","delet");
   button.setAttribute('onclick','delet(this.id)');
   button.setAttribute("type","button");
@@ -86,7 +86,7 @@ function writenote(){
   button.innerHTML = "удалить";
   note.appendChild(button);
 
-  var edit = document.createElement('button');
+  var edit = document.createElement('button');  // кнопка редактировать заметку
   edit.setAttribute("class","delet");
   edit.setAttribute('onclick','edit(this.id)');
   edit.setAttribute("type","button");
@@ -104,27 +104,28 @@ function writenote(){
 function edit(val){
   document.getElementById(val).disabled = true;
   var kk = parseInt(val.match(/\d+/));
+  let but = 'buttt'+kk;
   var note = document.getElementById(kk);
   var h2 = note.childNodes[0].firstChild;
   var li = note.childNodes[1].firstChild;
 
-  var input = document.createElement('input');
+  var input = document.createElement('input');// заголоков заметки
   input.setAttribute("class",'edith');
   input.setAttribute('id','hedit')
   input.value=h2.nodeValue;
   note.appendChild(input);
 
-  var text=document.createElement('textarea');
+  var text=document.createElement('textarea'); //текс заметки
   text.setAttribute('class','editli');
   text.setAttribute('id','liedit');
   text.value=li.nodeValue;
   note.appendChild(text);
 
-  var save = document.createElement('button');
+  var save = document.createElement('button'); // кнопка сохранить редактированный текст
   save.setAttribute("class","ppdel");
   save.setAttribute('onclick','saveedit(this.id)');
   save.setAttribute("type","button");
-  save.setAttribute('id',val);
+  save.setAttribute('id',but);
   save.innerHTML = 'сохранить';
   note.appendChild(save);
   
@@ -140,6 +141,7 @@ function edit(val){
     const keep3=[];
     const keep4=[];
     let i = 0;
+    let butedit = 'butt'+kk;
     keep3.push(document.getElementById("hedit").value);
     keep4.push(document.getElementById("liedit").value);
     Hvar = keep3[i];
@@ -150,7 +152,6 @@ function edit(val){
     var note = document.getElementById(kk);
     var h2 = note.childNodes[0].firstChild;
     var li = note.childNodes[1].firstChild;
-    var pp = note.childNodes[6].firstChild;
 
     h2.nodeValue = Hvar;
     li.nodeValue = Lvar;
@@ -158,13 +159,14 @@ function edit(val){
     var hedit = document.getElementById('hedit');
     var liedit = document.getElementById('liedit');
   
-    
-   
-    pp.remove();
+  var button = document.getElementById(val);
+
+  button.remove();
+
     
      hedit.remove();
     liedit.remove();
-    document.getElementById(val).disabled = false;
+    document.getElementById(butedit).disabled = false;
 
     
 
