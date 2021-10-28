@@ -98,10 +98,11 @@ function writenote(){
   i++;
 
 }
-
-
-
+let dd = 0;
 function edit(val){
+
+  if (dd == 0){
+    dd = 1;
   document.getElementById(val).disabled = true;
   var kk = parseInt(val.match(/\d+/));
   let but = 'buttt'+kk;
@@ -128,10 +129,10 @@ function edit(val){
   save.setAttribute('id',but);
   save.innerHTML = 'сохранить';
   note.appendChild(save);
-  
-  
- 
-  
+  }
+  else{
+  return;
+  }
 }
 
   function saveedit(val) {
@@ -160,10 +161,9 @@ function edit(val){
     var liedit = document.getElementById('liedit');
   
   var button = document.getElementById(val);
-
+    dd = 0;
   button.remove();
 
-    
      hedit.remove();
     liedit.remove();
     document.getElementById(butedit).disabled = false;
