@@ -63,7 +63,7 @@ function writenote(){
   keep2.push(document.getElementById("heading").value);  // запись заголовка
   var list = document.getElementById('output')
   var note = document.createElement('note');
-  note.setAttribute("class","note");
+  note.setAttribute("class","noteHi");
   note.setAttribute("id",N);
   var h2 = document.createElement('H2')
   h2.setAttribute('id','h2')
@@ -73,7 +73,7 @@ function writenote(){
    
   keep.push(document.getElementById("note").value);  // запись заметки
   var li = document.createElement('LI')
-  li.setAttribute("class","notee")
+  li.setAttribute("class","noteLi")
   li.setAttribute('id','li')
   li.innerHTML = keep[i]
   note.appendChild(li)
@@ -98,11 +98,11 @@ function writenote(){
   i++;
 
 }
-let dd = 0;
+let editstatus = 0;
 function edit(val){
 
-  if (dd == 0){
-    dd = 1;
+  if (editstatus == 0){
+    editstatus = 1;
   document.getElementById(val).disabled = true;
   var kk = parseInt(val.match(/\d+/));
   let but = 'buttt'+kk;
@@ -112,12 +112,14 @@ function edit(val){
 
   var input = document.createElement('input');// заголоков заметки
   input.setAttribute("class",'edith');
-  input.setAttribute('id','hedit')
+  input.setAttribute("size",'30');
+  input.setAttribute('id','Hiedit')
   input.value=h2.nodeValue;
   note.appendChild(input);
 
   var text=document.createElement('textarea'); //текс заметки
-  text.setAttribute('class','editli');
+  text.setAttribute('style','editli');
+  text.setAttribute("cols",'75');
   text.setAttribute('id','liedit');
   text.value=li.nodeValue;
   note.appendChild(text);
@@ -143,30 +145,30 @@ function edit(val){
     const keep4=[];
     let i = 0;
     let butedit = 'butt'+kk;
-    keep3.push(document.getElementById("hedit").value);
+    keep3.push(document.getElementById("Hiedit").value);
     keep4.push(document.getElementById("liedit").value);
     Hvar = keep3[i];
     Lvar = keep4[i];    
     i++;
     
-  
     var note = document.getElementById(kk);
     var h2 = note.childNodes[0].firstChild;
     var li = note.childNodes[1].firstChild;
 
     h2.nodeValue = Hvar;
     li.nodeValue = Lvar;
+  
 
-    var hedit = document.getElementById('hedit');
+
+    var hedit = document.getElementById('Hiedit');
     var liedit = document.getElementById('liedit');
   
-  var button = document.getElementById(val);
-    dd = 0;
-  button.remove();
-
-     hedit.remove();
+    var button = document.getElementById(val);
+    editstatus = 0;     // возвращает статут редактирования
+    button.remove();
+    hedit.remove();
     liedit.remove();
-    document.getElementById(butedit).disabled = false;
+    document.getElementById(butedit).disabled = false;  // включает кнопку редактирования
 
     
 

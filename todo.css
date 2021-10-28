@@ -17,7 +17,11 @@
   /* Left and right column */
 .column.side {
   width: 25%;
+  text-align:justify;
   height: auto;
+  /* padding: 2%; */
+  /* text-align:end; */
+ 
 }
 .column.middle {
   width: 75%;
@@ -47,8 +51,8 @@
   width: 100%; /* Полная ширина */
   height: 100%; /* Полная высота */
   overflow: auto; /* Включите прокрутку, если это необходимо */
-  background-color: rgb(0,0,0); /* Цвет запасной вариант  */
-  background-color: rgba(0,0,0,0.4); /*Черный с непрозрачностью */
+  background-color: rgb(0, 0, 0); /* Цвет запасной вариант  */
+  background-color: rgba(255, 255, 255, 0.4); /*Черный с непрозрачностью */
 }
 
 
@@ -95,25 +99,47 @@
 
 .modal-header {
   padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
+  background-color: rgba(189, 19, 241, 0.849);;
+  /* color: rgb(189, 19, 241); */
 }
 
-.modal-body {padding: 2px 16px;}
+.modal-body {
+  padding: 2px 16px;
+  background-color: rgba(255, 255, 255, 0.671);
+}
 
 .modal-footer {
   padding: 2px 16px;
-  background-color: #5cb85c;
-  color: white;
+  background-color: rgba(189, 19, 241, 0.849);
+  /* color: white; */
 }
 
-.note {
-  color: red;
+.noteHi {
+  color: rgb(0, 0, 0);
+  /* text-align: right; */
+  /* vertical-align: auto; */
 }
 
-.notee{
-  color: red;
+.noteLi{
+
+  white-space: pre-wrap;
+  
 }
+
+.edith{
+  
+  white-space: pre-wrap;
+}
+
+/* .editli{ 
+   columns: 1000px;
+  column-width: auto;
+  width: 100px;
+} */
+
+
+
+
 /* 
 .delet{
 
