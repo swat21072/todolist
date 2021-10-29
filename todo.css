@@ -114,21 +114,23 @@
   /* color: white; */
 }
 
-.noteHi {
+.noteHi {   /* заголовок заметки */
   color: rgb(0, 0, 0);
   /* text-align: right; */
   /* vertical-align: auto; */
 }
 
-.noteLi{
-
+ .noteLi{   /* текст заметки */
+  /* text-indent: 3px; */
   white-space: pre-wrap;
+ 
   
 }
 
 .edith{
   
   white-space: pre-wrap;
+  
 }
 
 /* .editli{ 
