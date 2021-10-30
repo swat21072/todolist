@@ -1,18 +1,12 @@
-function addlist() {
-    document.getElementById("list").innerHTML = "<textarea>Some text...</textarea>"; // окно записи текста 
-    // document.getElementById("list").onclick = add() {
-          
-  }
-
   // Get the modal
 var modal = document.getElementById("myModal");
-
+var modaledit = document.getElementById("editModal");
 // Get the button that opens the modal
 var btn = document.getElementById("myBtn");
 
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
-
+var span2 = document.getElementsByClassName("close2")[0];
 // When the user clicks the button, open the modal 
 btn.onclick = function() {
   modal.style.display = "block";
@@ -22,7 +16,9 @@ btn.onclick = function() {
 span.onclick = function() {
   modal.style.display = "none";
 }
-
+span2.onclick = function() {
+  modaledit.style.display = "none";
+}
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
@@ -30,20 +26,18 @@ window.onclick = function(event) {
   }
 }
 
+let numbernote = 0;
+let editstatus = 0;
 
 var save = document.getElementsByClassName("save")[0];  // кнопка сохранения
 save.onclick = function() {
 
   writenote();
   
-
   modal.style.display = "none";
   document.getElementById("heading").value = "";
   document.getElementById("note").value = "";
-  
 }
-
-
 
 function delet(val) {
   var kk = parseInt(val.match(/\d+/));
@@ -98,79 +92,47 @@ function writenote(){
   i++;
 
 }
-let editstatus = 0;
+
 function edit(val){
 
-  if (editstatus == 0){
-    editstatus = 1;
-  document.getElementById(val).disabled = true;
+  modaledit.style.display = "block"  //open modal
   var kk = parseInt(val.match(/\d+/));
   let but = 'buttt'+kk;
   var note = document.getElementById(kk);
   var h2 = note.childNodes[0].firstChild;
   var li = note.childNodes[1].firstChild;
-
-  var input = document.createElement('input');// заголоков заметки
-  input.setAttribute("class",'edith');
-  input.setAttribute("size",'30');
-  input.setAttribute('id','Hiedit')
-  input.value=h2.nodeValue;
-  note.appendChild(input);
-
-  var text=document.createElement('textarea'); //текс заметки
-  text.setAttribute('style','editli');
-  text.setAttribute("cols",'75');
-  text.setAttribute('id','liedit');
-  text.value=li.nodeValue;
-  note.appendChild(text);
-
-  var save = document.createElement('button'); // кнопка сохранить редактированный текст
-  save.setAttribute("class","ppdel");
-  save.setAttribute('onclick','saveedit(this.id)');
-  save.setAttribute("type","button");
-  save.setAttribute('id',but);
-  save.innerHTML = 'сохранить';
-  note.appendChild(save);
-  }
-  else{
-  return;
-  }
+  var H = document.getElementById('edithead');
+  var L = document.getElementById('editnote');
+  H.value = h2.nodeValue;
+  L.value = li.nodeValue;
+  numbernote = kk;
+  
 }
 
-  function saveedit(val) {
-    var kk = parseInt(val.match(/\d+/));
+var saved = document.getElementById('saveedit1');
+
+saved.onclick = function (){
+  saveeeed(numbernote);
+  modaledit.style.display = "none";
+}
+
+function saveeeed(val){
+  var note = document.getElementById(val);
+  
     let Hvar;
     let Lvar;
     const keep3=[];
     const keep4=[];
     let i = 0;
-    let butedit = 'butt'+kk;
-    keep3.push(document.getElementById("Hiedit").value);
-    keep4.push(document.getElementById("liedit").value);
+    keep3.push(document.getElementById("edithead").value);
+    keep4.push(document.getElementById("editnote").value);
     Hvar = keep3[i];
     Lvar = keep4[i];    
     i++;
-    
-    var note = document.getElementById(kk);
+    var note = document.getElementById(val);
     var h2 = note.childNodes[0].firstChild;
     var li = note.childNodes[1].firstChild;
 
     h2.nodeValue = Hvar;
     li.nodeValue = Lvar;
-  
-
-
-    var hedit = document.getElementById('Hiedit');
-    var liedit = document.getElementById('liedit');
-  
-    var button = document.getElementById(val);
-    editstatus = 0;     // возвращает статут редактирования
-    button.remove();
-    hedit.remove();
-    liedit.remove();
-    document.getElementById(butedit).disabled = false;  // включает кнопку редактирования
-
-    
-
-
 }
