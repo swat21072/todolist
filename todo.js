@@ -41,16 +41,20 @@ save.onclick = function() {
 
 function delet(val) {
   var kk = parseInt(val.match(/\d+/));
+  let spis = 'spisok'+kk;
   var note = document.getElementById(kk);
+  var spisok = document.getElementById(spis);
   note.remove();
+  spisok.remove();
 }
 
 let N = 0;
 function writenote(){   
-
   const keep = [];
   let i = 0;
   const keep2 =[];
+  let spis = 'spisok'+N;
+  let spisn = 'spisokn'+N;
   let but = 'but'+N;
   let but1 = 'butt'+N;
 
@@ -88,6 +92,19 @@ function writenote(){
   edit.innerHTML = 'редактировать';
   note.appendChild(edit);
 
+  var spisok = document.getElementById('list');  // ссылки на зметки
+  var number = document.createElement('li');
+  number.setAttribute('id',spis);
+  var a = document.createElement('a');
+  a.setAttribute('href','#'+N);
+  a.setAttribute('id',spisn);
+  number.setAttribute('class','list');
+  a.innerHTML = keep2[i];
+  spisok.appendChild(number);
+  number.appendChild(a);
+
+
+
   N++;
   i++;
 
@@ -118,7 +135,7 @@ saved.onclick = function (){
 
 function saveeeed(val){
   var note = document.getElementById(val);
-  
+    let spisok = 'spisokn'+val;
     let Hvar;
     let Lvar;
     const keep3=[];
@@ -135,4 +152,7 @@ function saveeeed(val){
 
     h2.nodeValue = Hvar;
     li.nodeValue = Lvar;
+    var list = document.getElementById(spisok);
+    list.innerText = Hvar;
+
 }
