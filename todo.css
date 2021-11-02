@@ -13,20 +13,21 @@
   .column {
     float: left;
     padding: 10px;
+    background-color: #f1f1f1;
     
   }
   /* Left and right column */
 .column.side {
   width: 15%;
   text-align:justify;
-  border-right: 2px solid #f1f1f1;
-  
-  
- 
+  border-right: 2px solid black;
+  border-top: 2px solid black;
+
 }
 .column.middle {
-  width: 75%;
+  width: 85%;
   height: 1000px;
+  border-top: 2px solid black;
 }
 .row:after {
   content: "";
@@ -123,15 +124,18 @@
 }
 
 .noteHi {   /* заголовок заметки */
-  color: rgb(0, 0, 0);
-  
+  color: rgb(15, 6, 6);
+  /* background: rgb(255, 255, 255); */
 }
 
  .noteLi{   /* текст заметки */
-  /* text-indent: 3px; */
+  text-align: justify;
+  text-indent: 5px;
   white-space: pre-wrap;
   list-style-type:none;
-    
+  background-color: rgb(255, 255, 255);
+  width: 68%;
+  border-radius: 20px;
 }
 
 .edith{
@@ -142,6 +146,14 @@
 
 .list{
   list-style-type:decimal;
+}
+
+.addbtn{
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  font-size: 20px;
+  border-radius: 6px;
 }
 
 
