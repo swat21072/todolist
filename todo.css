@@ -13,18 +13,20 @@
   .column {
     float: left;
     padding: 10px;
+    
   }
   /* Left and right column */
 .column.side {
-  width: 25%;
+  width: 15%;
   text-align:justify;
-  height: auto;
-  /* padding: 2%; */
-  /* text-align:end; */
+  border-right: 2px solid #f1f1f1;
+  
+  
  
 }
 .column.middle {
   width: 75%;
+  height: 1000px;
 }
 .row:after {
   content: "";
@@ -139,7 +141,7 @@
 }
 
 .list{
-  list-style-type:none;
+  list-style-type:decimal;
 }
 
 
