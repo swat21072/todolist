@@ -57,10 +57,14 @@ function writenote(){
   let spisn = 'spisokn'+N;
   let but = 'but'+N;
   let but1 = 'butt'+N;
+  let note1 = 'note'+N;
 
   keep2.push(document.getElementById("heading").value);  // запись заголовка
   var list = document.getElementById('output')
   var note = document.createElement('div');
+  var notetx = document.createElement('div');
+  notetx.setAttribute('class','notetx');
+  notetx.setAttribute('id',note1);
   note.setAttribute("class","note");
   note.setAttribute("id",N);
   var h2 = document.createElement('H2')
@@ -68,14 +72,15 @@ function writenote(){
   h2.setAttribute('class','noteHi')
   h2.innerHTML = keep2[i]
   list.appendChild(note);
-  note.appendChild(h2);
+  note.appendChild(notetx)
+  notetx.appendChild(h2);
    
   keep.push(document.getElementById("note").value);  // запись заметки
   var li = document.createElement('LI')
   li.setAttribute("class","noteLi")
   li.setAttribute('id','li')
   li.innerHTML = keep[i]
-  note.appendChild(li)
+  notetx.appendChild(li)
 
   var button = document.createElement('button'); // кнопка удалить заметку
   button.setAttribute("class","delet");
@@ -117,7 +122,8 @@ function edit(val){
   modaledit.style.display = "block"  //open modal
   var kk = parseInt(val.match(/\d+/));
   let but = 'buttt'+kk;
-  var note = document.getElementById(kk);
+  var LL = 'note'+kk;
+  var note = document.getElementById(LL);
   var h2 = note.childNodes[0].firstChild;
   var li = note.childNodes[1].firstChild;
   var H = document.getElementById('edithead');
@@ -148,7 +154,8 @@ function saveeeed(val){
     Hvar = keep3[i];
     Lvar = keep4[i];    
     i++;
-    var note = document.getElementById(val);
+    var LL = 'note'+val;
+    var note = document.getElementById(LL);
     var h2 = note.childNodes[0].firstChild;
     var li = note.childNodes[1].firstChild;
 

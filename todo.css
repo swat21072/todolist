@@ -5,12 +5,26 @@
   * {
     box-sizing: border-box;
   }
+
+  .html{
+    height: 100%;
+  }
+  .body{
+    height: 100%;
+    background-color: #f1f1f1;
+  }
+  .row{
+    background-color: #f1f1f1;
+   height: 100%; 
+  }
   .header {
     background-color: #f1f1f1;
     padding: 20px;
     text-align:center;
+    height: 10%;
   }
   .column {
+    height: 90%;
     float: left;
     padding: 10px;
     background-color: #f1f1f1;
@@ -19,6 +33,7 @@
   /* Left and right column */
 .column.side {
   width: 15%;
+  height: 100%;
   text-align:justify;
   border-right: 2px solid black;
   border-top: 2px solid black;
@@ -26,7 +41,8 @@
 }
 .column.middle {
   width: 85%;
-  height: 1000px;
+  /* height: 1000px; */
+  display: inline;
   border-top: 2px solid black;
 }
 .row:after {
@@ -125,14 +141,17 @@
 
 .note{
   /* border-radius: 5px; */
+  background-color: #f1f1f1;
+  /* width: 85%;
+  border-radius: 10px; */
+}
+.notetx{
   background-color: white;
   width: 85%;
   border-radius: 10px;
 }
 .noteHi {   /* заголовок заметки */
   color: rgb(15, 6, 6);
-  background: yellow; 
-   background: rgb(255, 255, 255);
 }
 
  .noteLi{   /* текст заметки */
@@ -140,9 +159,9 @@
   text-indent: 5px;
   white-space: pre-wrap;
   list-style-type:none;
-  background-color: rgb(255, 255, 255);
+  /* background-color: rgb(255, 255, 255);
   width: 68%;
-  border-radius: 20px;
+  border-radius: 20px; */
   
 }
 
