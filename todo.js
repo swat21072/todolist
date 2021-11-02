@@ -85,13 +85,14 @@ function writenote(){
   note.appendChild(button);
 
   var edit = document.createElement('button');  // кнопка редактировать заметку
-  edit.setAttribute("class","delet");
+  edit.setAttribute("class","redact");
   edit.setAttribute('onclick','edit(this.id)');
   edit.setAttribute("type","button");
   edit.setAttribute("id",but1);
   edit.innerHTML = 'редактировать';
   note.appendChild(edit);
 
+  
   var spisok = document.getElementById('list');  // ссылки на зметки
   var number = document.createElement('li');
   number.setAttribute('id',spis);

@@ -136,6 +136,7 @@
   background-color: rgb(255, 255, 255);
   width: 68%;
   border-radius: 20px;
+  
 }
 
 .edith{
@@ -156,7 +157,9 @@
   border-radius: 6px;
 }
 
-
+.redact{
+  margin-bottom: 20px;
+}
 
 
 
