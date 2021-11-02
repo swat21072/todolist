@@ -60,13 +60,14 @@ function writenote(){
 
   keep2.push(document.getElementById("heading").value);  // запись заголовка
   var list = document.getElementById('output')
-  var note = document.createElement('note');
-  note.setAttribute("class","noteHi");
+  var note = document.createElement('div');
+  note.setAttribute("class","note");
   note.setAttribute("id",N);
   var h2 = document.createElement('H2')
   h2.setAttribute('id','h2')
+  h2.setAttribute('class','noteHi')
   h2.innerHTML = keep2[i]
-  list.appendChild(note)
+  list.appendChild(note);
   note.appendChild(h2);
    
   keep.push(document.getElementById("note").value);  // запись заметки

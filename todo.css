@@ -123,9 +123,16 @@
   /* color: white; */
 }
 
+.note{
+  /* border-radius: 5px; */
+  background-color: white;
+  width: 85%;
+  border-radius: 10px;
+}
 .noteHi {   /* заголовок заметки */
   color: rgb(15, 6, 6);
-  /* background: rgb(255, 255, 255); */
+  background: yellow; 
+   background: rgb(255, 255, 255);
 }
 
  .noteLi{   /* текст заметки */
