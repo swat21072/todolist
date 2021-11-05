@@ -59,6 +59,13 @@ function writenote(){
   let but1 = 'butt'+N;
   let note1 = 'note'+N;
 
+  let chek = document.getElementById('heading').value;
+  
+  if (chek === ""){
+    
+    return(alert("Вы ничего не записали"));
+  }
+  else{
   keep2.push(document.getElementById("heading").value);  // запись заголовка
   var list = document.getElementById('output')
   var note = document.createElement('div');
@@ -114,7 +121,8 @@ function writenote(){
 
   N++;
   i++;
-
+  }
+  
 }
 
 function edit(val){
